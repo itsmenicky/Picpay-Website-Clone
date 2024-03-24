@@ -1,0 +1,202 @@
+header{
+    display: flex;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    top: 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.navbar-content{
+    display: flex;
+    margin: 0.6em 0 0.6em 0;
+    align-items: center;
+}
+
+body{
+    background-color: white;
+}
+
+.navbar-links{
+    display: flex;
+    gap: 2em;
+    padding: 0 10em 0em 10em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    list-style: none;
+    cursor: pointer;
+}
+
+.navbar-action-buttons button{
+    width: 11em;
+    height: 3.2em;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+}
+
+#action-btn-1{
+    background-color: white;
+    color: #39724c;
+    text-decoration: underline;
+}
+
+#action-btn-1:hover{
+    background-color: #e6f6f0;
+}
+
+#action-btn-2{
+    color: white;
+    background-color: #39724c;
+}
+
+.banner{
+    background-color: #c2c6b8;
+    width: 100%;
+    margin-top: 4.4em;
+    display: flex;
+    align-items: center;
+}
+
+.banner-content{
+    width: 50%;
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    padding-left: 2em;
+    line-height: 1.5em;
+    color: #383227;
+}
+
+#banner-btn{
+    width: 15em;
+    height: 3.2em;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    background-color: #39724c;
+    cursor: pointer;
+    border: none;
+}
+
+.banner-img img{
+    width: 100%;
+    height: 100%;
+    padding-left: 4em;
+}
+
+.picpay-card{
+    background-color: #238662;
+    display: flex;
+    position: relative;
+    margin-left: 10em;
+    margin-top: -56px;
+    align-items: center;
+}
+
+.picpay-card div{
+    margin-bottom: 5em;
+    margin-top: 5em;
+}
+
+.card-img img{
+    width: 70%;
+    margin-left: 5em;
+    margin-top: 10px;
+}
+
+.picpay-card-content{
+    margin-right: 30em;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+#picpaycard-title{
+    font-size: 2rem;
+}
+
+#picpaycard-btn{
+    width: 16em;
+    height: 3.2em;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    border-style:solid;
+    border-color: white;
+    border-width: 2px;
+}
+
+.beneficios{
+    margin-top: 10em;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.beneficios-titles{
+    width: 40%;
+    font-family: 'Inter', sans-serif;
+    padding-left: 2em;
+}
+
+#titulo-beneficios{
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+#abrir-conta-btn{
+    width: 14em;
+    height: 3.2em;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #39724c;
+    background-color: transparent;
+    cursor: pointer;
+    border-style:solid;
+    border-color: #238662;
+    border-width: 2px;
+}
+
+#abrir-conta-btn:hover{
+    background-color: #e6f6f0;
+}
+
+.beneficios-content{
+    padding-left: 10em;
+    width: 50%;
+    padding-right: 2em;
+}
+
+.beneficio{
+    width: 50%;
+    font-family: 'Inter', sans-serif;
+}
+
+#beneficios-linha1, #beneficios-linha2{
+    display: flex;
+    gap: 20px;
+}
+
+#beneficios-linha2{
+    padding-top: 50px;
+}
