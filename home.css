@@ -237,7 +237,7 @@ body{
 .inclined{
     background-color: rgb(35, 134, 98);
     transform: skewY(-4deg);
-    height: 650px;
+    height: 750px;
 }
 
 #emprestimo-btn{
@@ -376,6 +376,10 @@ body{
     z-index: -1;
 }
 
+.abrir-conta-digital .inclined{
+    height: 800px;
+}
+
 .abrirconta-content {
     position: relative;
     transform: skewY(4deg);
@@ -418,4 +422,27 @@ body{
 
 .abrirconta-btn:hover{
     background-color: rgb(255, 255, 255, 0.132);
+}
+
+footer{
+    background-color: black;
+    margin-top: -5em;
+    position: absolute;
+    width: 100%;
+    padding: 5em;
+    display: flex;
+}
+
+.footer-column{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 15px;
+    width: 20%;
+}
+
+.footer-column ul{
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+    line-height: 3em;
 }
