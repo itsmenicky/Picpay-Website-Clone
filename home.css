@@ -200,3 +200,65 @@ body{
 #beneficios-linha2{
     padding-top: 50px;
 }
+
+.picpay-emprestimos{
+    margin-top: 10em;
+    width: 100%;
+    display: flex;
+}
+
+.emprestimos-content{
+    display: flex;
+    gap: 7em;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    transform: skewY(4deg);
+    padding-left: 2em;
+    align-items: center;
+}
+
+.emprestimos-content img{
+    border-radius: 20px;
+    margin-top: -3em;
+}
+
+.inclined{
+    background-color: rgb(35, 134, 98);
+    transform: skewY(-4deg);
+    height: 650px;
+}
+
+#emprestimo-btn{
+    width: 14em;
+    height: 3.2em;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    border-style:solid;
+    border-color: white;
+    border-width: 2px;
+}
+
+.emprestimo-cards{
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 6em;
+}
+
+.emprestimo-card{
+    background-color: white;
+    width: 30%;
+    height: 10em;
+    border-radius: 20px;
+    color: black;
+}
+
+.card-content{
+    padding: 15px;
+}
