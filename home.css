@@ -375,3 +375,32 @@ body{
     margin-top: -11em;
     z-index: -1;
 }
+
+.abrirconta-content{
+    transform: skewY(4deg);
+    padding: 18em 0em 0em 0em;
+    width: 100%;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+.abrirconta-btn{
+    width: 15em;
+    height: 3.2em;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    border-style:solid;
+    border-color: white;
+    border-width: 2px;
+}
+
+.abrirconta-btn:hover{
+    background-color: rgb(255, 255, 255, 0.132);
+}
