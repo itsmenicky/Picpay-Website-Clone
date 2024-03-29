@@ -14,16 +14,13 @@ header{
 body{
     margin: 0;
     overflow-x: hidden;
+    background-color: white;
 }
 
 .navbar-content{
     display: flex;
     margin: 0.6em 0 0.6em 0;
     align-items: center;
-}
-
-body{
-    background-color: white;
 }
 
 .navbar-links{
@@ -33,6 +30,9 @@ body{
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     list-style: none;
+}
+
+.navbar-links li{
     cursor: pointer;
 }
 
@@ -376,15 +376,30 @@ body{
     z-index: -1;
 }
 
-.abrirconta-content{
+.abrirconta-content {
+    position: relative;
     transform: skewY(4deg);
-    padding: 18em 0em 0em 0em;
-    width: 100%;
+    padding: 18em 0; /* Ajuste o valor do padding conforme necessário */
     text-align: center;
+    width: 100%;
     font-family: 'Inter', sans-serif;
     color: white;
+    overflow: hidden; /* Para garantir que o pseudo-elemento não ultrapasse os limites da div */
 }
 
+.abrirconta-content::before {
+    content: "";
+    position: absolute;
+    top: -20px; /* Ajuste esse valor para alterar a posição vertical do background */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(https://picpay.com/assets/images/home/bg-circulo.webp);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transform: skewY(-4deg); /* Inverte o skew para que o background fique reto */
+}
 .abrirconta-btn{
     width: 15em;
     height: 3.2em;
