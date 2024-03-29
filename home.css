@@ -62,6 +62,10 @@ body{
     background-color: #39724c;
 }
 
+#action-btn-2:hover{
+    background-color: #39724ccb;
+}
+
 .banner{
     background-color: #c2c6b8;
     width: 100%;
@@ -90,6 +94,10 @@ body{
     background-color: #39724c;
     cursor: pointer;
     border: none;
+}
+
+#banner-btn:hover{
+    background-color: #39724ccb;
 }
 
 .banner-img img{
@@ -141,6 +149,10 @@ body{
     border-style:solid;
     border-color: white;
     border-width: 2px;
+}
+
+#picpaycard-btn:hover{
+    background-color: rgba(255, 255, 255, 0.132);
 }
 
 .beneficios{
@@ -244,6 +256,10 @@ body{
     border-width: 2px;
 }
 
+#emprestimo-btn:hover{
+    background-color: rgb(255, 255, 255, 0.132);
+}
+
 .emprestimo-cards{
     display: flex;
     gap: 10px;
@@ -307,4 +323,8 @@ body{
     border-style:solid;
     border-color: white;
     border-width: 2px;
+}
+
+.rendimento-card-btn:hover{
+    background-color: rgb(255, 255, 255, 0.132);
 }
