@@ -328,3 +328,43 @@ body{
 .rendimento-card-btn:hover{
     background-color: rgb(255, 255, 255, 0.132);
 }
+
+.picpay-shop{
+    padding: 10em 2em 3em 2em;
+    display: flex;
+    width: 100%;
+    gap: 5em;
+    font-family: 'Inter', sans-serif;
+}
+
+.picpayshop-content{
+    width: 50%;
+}
+
+.picpayshop-img{
+    width: 40%;
+}
+
+.picpayshop-img img{
+    width: 100%;
+}
+
+.picpayshop-btn{
+    width: 14em;
+    height: 3.2em;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #39724c;
+    background-color: transparent;
+    cursor: pointer;
+    border-style:solid;
+    border-color: #238662;
+    border-width: 2px;
+}
+
+.picpayshop-btn:hover{
+    background-color: #e6f6f0;
+}
