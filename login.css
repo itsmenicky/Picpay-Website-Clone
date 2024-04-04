@@ -16,6 +16,10 @@ body{
     padding-left: 10em;
 }
 
+.login-btns{
+    padding-bottom: 20px;
+}
+
 .login-btns-style{
     width: 30em;
     height: 3.2em;
