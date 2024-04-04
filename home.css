@@ -428,8 +428,11 @@ footer{
     background-color: black;
     margin-top: -5em;
     position: absolute;
-    width: 100%;
     padding: 5em;
+    width: 100%;
+}
+
+.footer-columns{
     display: flex;
 }
 
@@ -445,4 +448,33 @@ footer{
     padding: 0;
     font-size: 14px;
     line-height: 3em;
+}
+
+.socials{
+    align-items: left;
+    text-align: left;
+    display: flex;
+    width: 100%;
+    gap: 8.7em;
+}
+
+#footer-logo{
+    padding-top: 4em;
+    width: 50%;
+}
+
+#social-medias{
+    padding-top: 15em;
+}
+
+.sac-app{
+    padding-left: 10em;
+    padding-top: 3em;
+    width: 50%;
+    right: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.sac-content{
+    color: white;
 }
