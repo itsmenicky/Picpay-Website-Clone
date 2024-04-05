@@ -36,8 +36,8 @@ async function fazerLogin() {
     if (!respostaApi.ok) {
         const respostaErro = await respostaApi.json();
 
-        if (respostaErro.error) {
-            alert(respostaErro.error);
+        if (respostaErro.data?.errors) {
+            alert(respostaErro.data.errors);
         } else {
             alert("Erro desconhecido ao fazer login");
         }

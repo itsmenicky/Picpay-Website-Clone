@@ -71,23 +71,34 @@ async function cadastroUsuario(){
     if (!respostaApi.ok) {
         const respostaErro = await respostaApi.json();
 
-        if (respostaErro.errors?.name) {
-            alert(respostaErro.errors.name[0]);
+        let errorMessage = "";
 
-        } else if (respostaErro.errors?.cpf_cnpj) {
-            alert(respostaErro.errors.cpf_cnpj[0]);
-
-        } else if (respostaErro.errors?.email) {
-            alert(respostaErro.errors.email[0]);
-
-        } else if (respostaErro.errors?.birthday) {
-            alert(respostaErro.errors.birthday[0]);
-
-        } else if (respostaErro.errors?.password) {
-            alert(respostaErro.errors.password[0]);
-        } else {
-            alert("Erro desconhecido ao cadastrar usuário");
+        if (respostaErro.data?.errors.name) {
+            errorMessage += respostaErro.data.errors.name[0] + "\n";
         }
+        
+        if (respostaErro.data?.errors.cpf_cnpj) {
+            errorMessage += respostaErro.data.errors.cpf_cnpj[0] + "\n";
+        }
+        
+        if (respostaErro.data?.errors.email) {
+            errorMessage += respostaErro.data.errors.email[0] + "\n";
+        }
+        
+        if (respostaErro.data?.errors.birthday) {
+            errorMessage += respostaErro.data.errors.birthday[0] + "\n";
+        }
+        
+        if (respostaErro.data?.errors.password) {
+            errorMessage += respostaErro.data.errors.password[0] + "\n";
+        }
+        
+        if (errorMessage === "") {
+            errorMessage = "Erro desconhecido ao cadastrar usuário";
+        }
+        
+        alert(errorMessage);
+        
     } else {
         alert("Cadastro feito com sucesso");
         window.location.href = "login.html";
