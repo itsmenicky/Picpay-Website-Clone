@@ -14,6 +14,42 @@ async function cadastroUsuario(){
     }else{
         termos = 0
     }
+
+     // Verifica se algum campo está vazio, e se estiver, ele fica em vermelho, caso não esteja, ele fica verde.
+
+
+     if (!nomeCadastro.value || !cpfCadastro.value || !emailCadastro.value || !birthdayCadastro.value || !senhaCadastro.value) {
+        alert("Por favor, preencha todos os campos.");
+        if (!nomeCadastro.value) {
+            nomeCadastro.style.borderColor = "red";
+        } else {
+            nomeCadastro.style.borderColor = "green";
+        }
+        if (!cpfCadastro.value) {
+            cpfCadastro.style.borderColor = "red";
+        } else {
+            cpfCadastro.style.borderColor = "green";
+        }
+        if (!emailCadastro.value) {
+            emailCadastro.style.borderColor = "red";
+        } else {
+            emailCadastro.style.borderColor = "green";
+        }
+        if (!birthdayCadastro.value) {
+            birthdayCadastro.style.borderColor = "red";
+        } else {
+            birthdayCadastro.style.borderColor = "green";
+        }
+        if (!senhaCadastro.value) {
+            senhaCadastro.style.borderColor = "red";
+        } else {
+            senhaCadastro.style.borderColor = "green";
+        }
+        return;
+    }
+
+
+
     let respostaApi = await fetch(url,{
         method:"POST",
         body:JSON.stringify(
@@ -54,5 +90,6 @@ async function cadastroUsuario(){
         }
     } else {
         alert("Cadastro feito com sucesso");
+        window.location.href = "login.html";
     }
 }

@@ -13,10 +13,10 @@
             <img style="padding-bottom: 20px;" src="https://auth2.picpay.com/auth/resources/seu7f/login/internet-banking-pf/src/assets/images/logo.png">
             <h3 style="font-size: 2em; padding-bottom: 20px;">Acesse sua conta</h3>
             <form>
-                <input class="data-inputs" type="text" placeholder="CPF"></br></br>
-                <input class="data-inputs" type="password" placeholder="Digite sua senha"></br></br>
+                <input id="emailCadastro" class="data-inputs" type="email" placeholder="Email"></br></br>
+                <input id="senhaCadastro" class="data-inputs" type="password" placeholder="Digite sua senha"></br></br>
                 <div class="login-btns">
-                    <button class="login-btns-style" id="entrar-btn">Entrar</button></br></br>
+                    <button class="login-btns-style" id="entrar-btn" type="button" onclick="fazerLogin()">Entrar</button></br></br>
                     <button class="login-btns-style" id="esqueci-minha-senha">Esqueci minha senha</button>
                 </div>
             </form></br>
@@ -29,4 +29,5 @@
         </div>
     </section>
 </body>
+<script src="assets/js/login.js"></script>
 </html>
