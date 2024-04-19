@@ -50,7 +50,7 @@ async function cadastroUsuario(){
 
 
 
-    let respostaApi = await fetch(url,{
+    let response = await fetch(url,{
         method:"POST",
         body:JSON.stringify(
             {
@@ -68,33 +68,28 @@ async function cadastroUsuario(){
         }        
     });
 
-    if (!respostaApi.ok) {
-        const respostaErro = await respostaApi.json();
+    if (!response.ok) {
 
         let errorMessage = "";
 
-        if (respostaErro.data?.errors.name) {
+        if (response.data?.errors.name) {
             errorMessage += respostaErro.data.errors.name[0] + "\n";
         }
         
-        if (respostaErro.data?.errors.cpf_cnpj) {
+        if (response.data?.errors.cpf_cnpj) {
             errorMessage += respostaErro.data.errors.cpf_cnpj[0] + "\n";
         }
         
-        if (respostaErro.data?.errors.email) {
+        if (response.data?.errors.email) {
             errorMessage += respostaErro.data.errors.email[0] + "\n";
         }
         
-        if (respostaErro.data?.errors.birthday) {
+        if (response.data?.errors.birthday) {
             errorMessage += respostaErro.data.errors.birthday[0] + "\n";
         }
         
-        if (respostaErro.data?.errors.password) {
+        if (response.data?.errors.password) {
             errorMessage += respostaErro.data.errors.password[0] + "\n";
-        }
-        
-        if (errorMessage === "") {
-            errorMessage = "Erro desconhecido ao cadastrar usuário";
         }
         
         alert(errorMessage);
