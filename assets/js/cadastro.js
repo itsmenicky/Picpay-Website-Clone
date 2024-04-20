@@ -1,4 +1,4 @@
-const url = 'https://api-go-wash-efc9c9582687.herokuapp.com/api/user';
+const url = 'https://go-wash-api.onrender.com/api/user'; 
 
 async function cadastroUsuario(){   
     let nomeCadastro = document.getElementById('nomeCadastro');
@@ -69,31 +69,31 @@ async function cadastroUsuario(){
     });
 
     if (!response.ok) {
-
+        alert("Dentro do if");  
         let errorMessage = "";
-
-        if (response.data?.errors.name) {
-            errorMessage += respostaErro.data.errors.name[0] + "\n";
+        let responseError = await response.json();
+        
+        if (responseError.data?.errors.name) {
+            errorMessage += responseError.data.errors.name[0] + "\n";
         }
         
-        if (response.data?.errors.cpf_cnpj) {
-            errorMessage += respostaErro.data.errors.cpf_cnpj[0] + "\n";
+        if (responseError.data?.errors.cpf_cnpj) {
+            errorMessage += responseError.data.errors.cpf_cnpj[0] + "\n";
         }
         
-        if (response.data?.errors.email) {
-            errorMessage += respostaErro.data.errors.email[0] + "\n";
+        if (responseError.data?.errors.email) {
+            errorMessage += responseError.data.errors.email[0] + "\n";
         }
         
-        if (response.data?.errors.birthday) {
-            errorMessage += respostaErro.data.errors.birthday[0] + "\n";
+        if (responseError.data?.errors.birthday) {
+            errorMessage += responseError.data.errors.birthday[0] + "\n";
+        }
+       
+        if (responseError.data?.errors.password) {
+            errorMessage += responseError.data.errors.password[0] + "\n";
         }
         
-        if (response.data?.errors.password) {
-            errorMessage += respostaErro.data.errors.password[0] + "\n";
-        }
-        
-        alert(errorMessage);
-        
+       alert(errorMessage);
     } else {
         alert("Cadastro feito com sucesso");
         window.location.href = "login.html";
