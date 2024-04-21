@@ -73,20 +73,8 @@ async function cadastroUsuario(){
         let errorMessage = "";
         let responseError = await response.json();
         
-        if (responseError.data?.errors.name) {
-            errorMessage += responseError.data.errors.name[0] + "\n";
-        }
-        
         if (responseError.data?.errors.cpf_cnpj) {
-            errorMessage += responseError.data.errors.cpf_cnpj[0] + "\n";
-        }
-        
-        if (responseError.data?.errors.email) {
-            errorMessage += responseError.data.errors.email[0] + "\n";
-        }
-        
-        if (responseError.data?.errors.birthday) {
-            errorMessage += responseError.data.errors.birthday[0] + "\n";
+            errorMessage += responseError.data.errors.cpf_cnpj + "\n";
         }
        
         if (responseError.data?.errors.password) {
