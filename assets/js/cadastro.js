@@ -47,6 +47,8 @@ async function cadastroUsuario(){
         }
         return;
     }
+    
+    
 
 
 
@@ -72,6 +74,7 @@ async function cadastroUsuario(){
         alert("Dentro do if");  
         let errorMessage = "";
         let responseError = await response.json();
+
         
         if (responseError.data?.errors.cpf_cnpj) {
             errorMessage += responseError.data.errors.cpf_cnpj + "\n";
@@ -79,6 +82,10 @@ async function cadastroUsuario(){
        
         if (responseError.data?.errors.password) {
             errorMessage += responseError.data.errors.password[0] + "\n";
+        }
+
+        if(responseError.data?.errors){
+            errorMessage += responseError.data.errors+"\n";
         }
         
        alert(errorMessage);
