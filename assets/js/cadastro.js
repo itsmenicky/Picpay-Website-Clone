@@ -9,14 +9,18 @@ async function cadastroUsuario(){
     let checkboxCadastro = document.getElementById("checkboxCadastro")
     let termos = 0
 
-    if(checkboxCadastro.checked == true){
-        termos = 1
-    }else{
-        termos = 0
+    if (!checkboxCadastro.checked) {
+        alert('Por favor, aceite os termos para concluir o cadastro.');
+        return;
     }
 
-     // Verifica se algum campo está vazio, e se estiver, ele fica em vermelho, caso não esteja, ele fica verde.
+    let allowedDomains = ['gmail.com', 'outlook.com', 'yahoo.com'];
+    let emailDomain = emailCadastro.value.split('@')[1];
 
+    if (!allowedDomains.includes(emailDomain)) {
+        alert('Por favor, use um email válido com um domínio permitido (ex: gmail.com, outlook.com, yahoo.com).');
+        return;
+    }
 
      if (!nomeCadastro.value || !cpfCadastro.value || !emailCadastro.value || !birthdayCadastro.value || !senhaCadastro.value) {
         alert("Por favor, preencha todos os campos.");
@@ -77,18 +81,30 @@ async function cadastroUsuario(){
 
         
         if (responseError.data?.errors.cpf_cnpj) {
-            errorMessage += responseError.data.errors.cpf_cnpj + "\n";
+            errorMessage += responseError.data.errors.cpf_cnpj[0] + "\n"
+            alert("O CPF informado já está em uso.");
         }
        
         if (responseError.data?.errors.password) {
-            errorMessage += responseError.data.errors.password[0] + "\n";
+            errorMessage += responseError.data.errors.password[0] + "\n"
+            alert("A senha precisa conter no mínimo 6 dígitos.");
         }
+
+        if (responseError.data?.errors.birthday) {
+            errorMessage += responseError.data.errors.birthday[0] + "\n"
+            alert("A data informada é inválida.");
+        }
+
+        if (responseError.data?.errors.email) {
+            errorMessage += responseError.data.errors.email[0] + "\n"
+            alert("Informe um email válido.");
+        }
+
 
         if(responseError.data?.errors){
             errorMessage += responseError.data.errors+"\n";
         }
         
-       alert(errorMessage);
     } else {
         alert("Cadastro feito com sucesso");
         window.location.href = "login.html";
