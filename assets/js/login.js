@@ -1,4 +1,4 @@
-const loginUrl = 'https://api-go-wash-efc9c9582687.herokuapp.com/api/login';
+const loginUrl = 'https://go-wash-api.onrender.com/api/login';
 
 async function fazerLogin() {
     let email = document.getElementById('emailCadastro').value;
