@@ -44,7 +44,7 @@ async function fazerLogin() {
     } else {
 
         alert("Login bem sucedido");
-        //window.location.href = "pagina_principal.html";
+        window.location.href = "home.html";
     }
 
     localStorage.setItem('user', JSON.stringify(respostaApi))
