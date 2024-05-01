@@ -14,7 +14,7 @@ async function cadastroUsuario(){
         return;
     }
 
-    let allowedDomains = ['gmail.com', 'outlook.com', 'yahoo.com'];
+    let allowedDomains = ['gmail.com', 'outlook.com', 'yahoo.com', 'picdv.com', 'hotmail.com'];
     let emailDomain = emailCadastro.value.split('@')[1];
 
     if (!allowedDomains.includes(emailDomain)) {

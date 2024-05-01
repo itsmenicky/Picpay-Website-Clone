@@ -34,7 +34,7 @@ async function fazerLogin() {
     });
 
     if (!respostaApi.ok) {
-        const respostaErro = await respostaApi.json();
+        let respostaErro = await respostaApi.json();
 
         if (respostaErro.data?.errors) {
             alert(respostaErro.data.errors);
@@ -42,7 +42,12 @@ async function fazerLogin() {
             alert("Erro desconhecido ao fazer login");
         }
     } else {
+
         alert("Login bem sucedido");
         //window.location.href = "pagina_principal.html";
     }
+
+    localStorage.setItem('user', JSON.stringify(respostaApi))
+
+    console.log(respostaApi);
 }
