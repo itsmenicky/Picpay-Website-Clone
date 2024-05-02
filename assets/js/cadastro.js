@@ -14,8 +14,8 @@ async function cadastroUsuario() {
   if (!checkbox_cadastro.checked) {
     alert("Por favor, aceite os termos para concluir o cadastro.");
     return;
-  } else if (data_nasc.getFullYear() > 2005){
-    alert("Você deve ter mais de 18 anos para criar a conta.")
+  } else if (data_nasc.getFullYear() > 2007){
+    alert("Você deve ter no mínimo 16 anos para criar a conta.")
     return
   }
 
