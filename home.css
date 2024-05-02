@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+    top: 0;
+    padding-top: 2em;
+    z-index: 1000;
+    width: 100%;
+}
+
+.navbar-logo{
+    display: flex;
+    position: absolute;
+    left: 0;
+    padding-left: 5em;
+}
+
+.navbar-profile{
+    position: absolute;
+    right: 0;
+    padding-right: 5em;
+}
+
+.header-content{
+    margin-top: 6em;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+}
+
+.header-content h2{
+    font-weight: 700;
+    color: grey;
+    padding-left: 4em;
+    font-size: 20px;
+}
