@@ -58,6 +58,7 @@ body{
     font-family: 'Inter', sans-serif;
     border-color: rgba(0, 0, 0, 0.327);
     border-style: solid;
+    padding-left: 15px;
 }
 
 .login-img{

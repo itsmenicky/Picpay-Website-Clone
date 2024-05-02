@@ -4,7 +4,6 @@ body{
 
 .navbar{
     display: flex;
-    position: fixed;
     top: 0;
     padding-top: 2em;
     z-index: 1000;
@@ -25,7 +24,7 @@ body{
 }
 
 .header-content{
-    margin-top: 6em;
+    margin-top: 4em;
     font-family: 'Inter', sans-serif;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     padding-bottom: 10px;
@@ -36,4 +35,68 @@ body{
     color: grey;
     padding-left: 4em;
     font-size: 20px;
+}
+
+.balance-cards-container{
+    display: flex;
+    margin-top: 5em;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.balance-card{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 30em;
+    border-radius: 15px;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.balance-card-header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.balance-card-rendimento-badge{
+    margin-left: 15em;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(35, 134, 98, 0.211);
+}
+
+.grey-line{
+    background-color: grey;
+    width: 5em;
+    height: 2.5px;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin-top: 5em;
+    padding: 3em;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container{
+    display: flex;
+    align-items: first baseline;
+    gap: 20em;
+}
+
+.footer-informacoes ul{
+    list-style: none;
+    padding: 0;
+    line-height: 2.5em;
 }
