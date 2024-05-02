@@ -24,15 +24,17 @@ header{
 
 #cadastro{
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 100%;
     width: 33%;
     border-radius: 10px;
     background-color: white;
     font-family: 'Inter', sans-serif;
     z-index: 3000;
+    transform: translateX(100%);
+    transition: all 400ms ease-in-out;
 }
 
 #cadastro form{
@@ -92,6 +94,7 @@ header{
     font-family: 'Inter', sans-serif;
     border-color: rgba(0, 0, 0, 0.327);
     border-style: solid;
+    padding-left: 15px;
 }
 
 body{
