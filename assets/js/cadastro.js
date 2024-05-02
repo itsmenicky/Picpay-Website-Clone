@@ -1,51 +1,56 @@
 const url = "https://go-wash-api.onrender.com/api/user";
 
 async function cadastroUsuario() {
-  let nomeCadastro = document.getElementById("nomeCadastro");
-  let cpfCadastro = document.getElementById("cpfCadastro");
-  let emailCadastro = document.getElementById("emailCadastro");
-  let birthdayCadastro = document.getElementById("birthdayCadastro");
-  let senhaCadastro = document.getElementById("senhaCadastro");
-  let checkboxCadastro = document.getElementById("checkboxCadastro");
+  let nome_cadastro = document.getElementById("nome_cadastro");
+  let cpf_cadastro = document.getElementById("cpf_cadastro");
+  let email_cadastro = document.getElementById("email_cadastro");
+  let data_nascimento_cadastro = document.getElementById("data_nascimento_cadastro");
+  let senha_cadastro = document.getElementById("senha_cadastro");
+  let checkbox_cadastro = document.getElementById("checkboxCadastro");
   let termos = 0;
+  let data_campo = data_nascimento_cadastro.value;
+  let data_nasc = new Date(data_campo);
 
-  if (!checkboxCadastro.checked) {
+  if (!checkbox_cadastro.checked) {
     alert("Por favor, aceite os termos para concluir o cadastro.");
     return;
+  } else if (data_nasc.getFullYear() > 2005){
+    alert("Você deve ter mais de 18 anos para criar a conta.")
+    return
   }
 
   if (
-    !nomeCadastro.value ||
-    !cpfCadastro.value ||
-    !emailCadastro.value ||
-    !birthdayCadastro.value ||
-    !senhaCadastro.value
+    !nome_cadastro.value ||
+    !cpf_cadastro.value ||
+    !email_cadastro.value ||
+    !data_nascimento_cadastro.value ||
+    !senha_cadastro.value
   ) {
     alert("Por favor, preencha todos os campos.");
-    if (!nomeCadastro.value) {
-      nomeCadastro.style.borderColor = "red";
+    if (!nome_cadastro.value) {
+      nome_cadastro.style.borderColor = "red";
     } else {
-      nomeCadastro.style.borderColor = "green";
+      nome_cadastro.style.borderColor = "green";
     }
-    if (!cpfCadastro.value) {
-      cpfCadastro.style.borderColor = "red";
+    if (!cpf_cadastro.value) {
+      cpf_cadastro.style.borderColor = "red";
     } else {
-      cpfCadastro.style.borderColor = "green";
+      cpf_cadastro.style.borderColor = "green";
     }
-    if (!emailCadastro.value) {
-      emailCadastro.style.borderColor = "red";
+    if (!email_cadastro.value) {
+      email_cadastro.style.borderColor = "red";
     } else {
-      emailCadastro.style.borderColor = "green";
+      email_cadastro.style.borderColor = "green";
     }
-    if (!birthdayCadastro.value) {
-      birthdayCadastro.style.borderColor = "red";
+    if (!data_nascimento_cadastro.value) {
+      data_nascimento_cadastro.style.borderColor = "red";
     } else {
-      birthdayCadastro.style.borderColor = "green";
+      data_nascimento_cadastro.style.borderColor = "green";
     }
-    if (!senhaCadastro.value) {
-      senhaCadastro.style.borderColor = "red";
+    if (!senha_cadastro.value) {
+      senha_cadastro.style.borderColor = "red";
     } else {
-      senhaCadastro.style.borderColor = "green";
+      senha_cadastro.style.borderColor = "green";
     }
     return;
   }
@@ -53,13 +58,13 @@ async function cadastroUsuario() {
   let response = await fetch(url, {
     method: "POST",
     body: JSON.stringify({
-      name: nomeCadastro.value,
-      email: emailCadastro.value,
+      name: nome_cadastro.value,
+      email: email_cadastro.value,
       user_type_id: 1,
-      password: senhaCadastro.value,
-      cpf_cnpj: cpfCadastro.value,
+      password: senha_cadastro.value,
+      cpf_cnpj: cpf_cadastro.value,
       terms: termos,
-      birthday: birthdayCadastro.value,
+      birthday: data_nascimento_cadastro.value,
     }),
     headers: {
       "Content-Type": "application/json",
@@ -73,8 +78,6 @@ async function cadastroUsuario() {
       alert("O CPF informado já está em uso.");
     } else if (responseError.data?.errors.password) {
       alert("A senha precisa conter no mínimo 6 dígitos.");
-    } else if (responseError.data?.errors.birthday) {
-      alert("A data informada é inválida.");
     } else if (responseError.data?.errors.email) {
       alert("Email já em uso!");
     } else if (responseError.data?.errors) {
