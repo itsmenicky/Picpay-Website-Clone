@@ -33,21 +33,18 @@ async function fazerLogin() {
         }
     });
 
-    if (!respostaApi.ok) {
-        let respostaErro = await respostaApi.json();
+    let resposta = await respostaApi.json();
 
-        if (respostaErro.data?.errors) {
-            alert(respostaErro.data.errors);
+    if (!respostaApi.ok) {
+
+        if (resposta.data?.errors) {
+            alert(resposta.data.errors);
         } else {
             alert("Erro desconhecido ao fazer login");
         }
     } else {
-
+        localStorage.setItem('user', JSON.stringify(resposta))
         alert("Login bem sucedido");
         window.location.href = "home.html";
     }
-
-    localStorage.setItem('user', JSON.stringify(respostaApi))
-
-    console.log(respostaApi);
 }
