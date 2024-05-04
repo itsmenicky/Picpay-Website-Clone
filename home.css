@@ -41,7 +41,6 @@ body{
     gap: 58em;
     align-items: baseline;
     color:#39724c;
-    cursor: pointer;
 }
 
 .header-content-items svg{
@@ -53,6 +52,10 @@ body{
     color: grey;
     padding-left: 3em;
     font-size: 20px;
+}
+
+.header-content a{
+    cursor: pointer;
 }
 
 #cadastro-endereco{
