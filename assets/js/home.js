@@ -5,7 +5,7 @@ async function endereco(){
     
     let tokenUser = JSON.parse(localStorage.getItem("user")).access_token;
 
-    let resposta = fetch(url, {
+    let resposta = await fetch(enderecourl, {
         method:"GET",
         headers:{
             "Authorization": "Bearer "+tokenUser
@@ -23,5 +23,35 @@ function setUsername(){
     username_card.textContent = user.user.name
 }
 
-setUsername()
+async function cadastrarEndereco(){
+    let url= 'https://go-wash-api.onrender.com/api/auth/address';
+
+    let nome = document.getElementById("nome_da_rua_cadastro").value;
+    let cep = document.getElementById("cep_cadastro").value;
+    let endereco = document.getElementById("endereco_cadastro").value;
+    let numero = document.getElementById("numero_rua_cadastro").value;
+
+    let user = localStorage.getItem('user');
+    let token = JSON.parse(user).access_token;
+
+    let ApiEndereco =  await fetch( url,{
+        method:"POST",
+        body:JSON.stringify({
+            "title":nome,
+            "cep": cep,
+            "address": endereco,
+            "number": numero,
+            "complement": ""
+        }),
+        headers:{
+            'Content-Type': 'application/json',
+            "Authorization": "Bearer "+token
+
+        }
+    });
+    
+    window.location.href="home.html";
+}
+
 endereco()
+setUsername()

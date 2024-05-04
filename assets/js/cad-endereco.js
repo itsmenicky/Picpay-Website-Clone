@@ -1,10 +1,10 @@
 async function cadastrarEndereco(){
-    const url= "https://go-wash-api.onrender.com/api/auth/address";
+    let url= 'https://go-wash-api.onrender.com/api/auth/address';
 
-    let Nome = document.getElementById("nome").value;
-    let cep = document.getElementById("cep").value;
-    let enderco = document.getElementById("enderco").value;
-    let numero = document.getElementById("numero").value;
+    let Nome = document.getElementById("nome_da_rua_cadastro").value;
+    let cep = document.getElementById("cep_cadastro").value;
+    let endereco = document.getElementById("endereco_cadastro").value;
+    let numero = document.getElementById("numero_rua_cadastro").value;
 
     let user = localStorage.getItem('user');
     let token = JSON.parse(user).access_token;
@@ -12,10 +12,10 @@ async function cadastrarEndereco(){
     let ApiEndereco =  await fetch( url,{
         method:"POST",
         body:JSON.stringify({
-            "title":titulo,
-            "cep": cep,
-            "address": enderco,
-            "number": numero,
+            "title":titulo.value,
+            "cep": cep.value,
+            "address": endereco.value,
+            "number": numero.value,
             "complement": ""
         }),
         headers:{
@@ -24,10 +24,5 @@ async function cadastrarEndereco(){
 
         }
     });
-
-    let response = await ApiEndereco.json();
-
-    window.location.href="home.html"
-
 
 }
