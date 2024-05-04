@@ -1,4 +1,6 @@
 const url = "https://go-wash-api.onrender.com/api/user";
+let modal = document.getElementById("cadastro");
+let blurEffect = document.getElementById("overlay");
 
 async function cadastroUsuario() {
   let nome_cadastro = document.getElementById("nome_cadastro");
@@ -88,4 +90,20 @@ async function cadastroUsuario() {
     window.location.href = "login.html";
   }
   
+}
+
+function abrirPainel(){
+  modal.style.display = "block";
+  setTimeout(() => {
+      modal.style.transform = "translateX(0)";
+  }, 10);
+  blurEffect.style.display = "inherit";
+  document.body.style = "overflow-y: hidden;"
+}
+
+function fecharPainel(){
+  modal.style.transform = "translateX(100%)";
+  modal.style.display = "none";
+  blurEffect.style.display = "none";
+  document.body.style = "overflow-y: auto;"
 }
