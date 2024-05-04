@@ -1,4 +1,4 @@
-async function CadastrarEndereco(){
+async function cadastrarEndereco(){
     const url= "https://go-wash-api.onrender.com/api/auth/address";
 
     let Nome = document.getElementById("nome").value;
