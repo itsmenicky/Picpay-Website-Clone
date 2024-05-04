@@ -1,6 +1,5 @@
 modal = document.getElementById("cadastro");
 blurEffect = document.getElementById("overlay");
-closeIcon = document.getElementById("close-modal");
 
 function abrirPainel(){
     modal.style.display = "block";

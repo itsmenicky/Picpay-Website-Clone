@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    overflow-x: hidden;
 }
 
 .navbar{
@@ -23,6 +24,11 @@ body{
     padding-right: 5em;
 }
 
+.navbar-profile:hover{
+    transform: scale(1.03);
+    transition: transform 500ms ease;
+}
+
 .header-content{
     margin-top: 4em;
     font-family: 'Inter', sans-serif;
@@ -30,26 +36,53 @@ body{
     padding-bottom: 10px;
 }
 
+.header-content-items{
+    display: flex;
+    gap: 58em;
+    align-items: baseline;
+    color:#39724c;
+    cursor: pointer;
+}
+
+.header-content-items svg{
+    padding-right: 15px;
+}
+
 .header-content h2{
     font-weight: 700;
     color: grey;
-    padding-left: 4em;
+    padding-left: 3em;
     font-size: 20px;
 }
 
 #cadastro-endereco{
-    display: block;
+    display: none;
     position: fixed;
+    background-color: white;
     top: 0;
     right: 0;
     height: 100%;
     width: 33%;
     border-radius: 10px;
-    background-color: white;
     font-family: 'Inter', sans-serif;
     z-index: 3000;
-    /* transform: translateX(100%);
-    transition: all 400ms ease-in-out; */
+    transform: translateX(100%);
+    transition: all 400ms ease-in-out;
+}
+
+#close-cadastro{
+    cursor: pointer;
+}
+
+#overlay {
+    display: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
 }
 
 #cadastro-endereco form{
