@@ -211,7 +211,7 @@ footer{
     margin-top: 2em;
     margin-left: 13.2em;
     padding: 20px;
-    width: fit-content;
+    width: 63.5em;
     font-family: 'Inter', sans-serif;
     border: 2px solid grey;
     border-radius: 20px;
@@ -222,20 +222,17 @@ footer{
     padding: 0;
 }
 
-#endereco-titulo{
-    padding-right: 10em;
-}
-
-#endereco-cep{
-    padding-left: 10em;
-}
-
-#endereco-endereco{
-    padding-left: 15em;
-    padding-right: 19em;
+.endereco-container ul li{
+    line-height: 2;
 }
 
 .endereco-list-container{
     padding-top: 20px;
     display: flex;
+    gap: 5em;
+}
+
+.lista-titulos{
+    font-weight: bold;
+    padding-bottom: 10px;
 }

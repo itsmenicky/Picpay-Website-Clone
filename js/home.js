@@ -16,6 +16,7 @@ async function endereco(){
 
     let respostaApi = await resposta.json();
     console.log(respostaApi)
+    return setEnderecos(respostaApi);
 }
 
 function setUsername(){
@@ -69,6 +70,25 @@ async function cadastrarEndereco(){
     });
     
     window.location.href="home.html";
+}
+
+async function setEnderecos(respostaApi){
+    let enderecos_titulo = document.getElementById('endereco-titulo');
+    let enderecos_cep = document.getElementById('endereco-cep');
+    let enderecos_endereco = document.getElementById('endereco-endereco');
+    let respostaAPI = respostaApi
+
+    for(let i=0;i<respostaAPI.data.length;i++){
+        let li_titulo = document.createElement('li');
+        let li_cep = document.createElement('li');
+        let li_endereco = document.createElement('li');
+        li_titulo.append(respostaAPI.data[i].title)
+        li_cep.append(respostaAPI.data[i].cep)
+        li_endereco.append(respostaAPI.data[i].address)
+        enderecos_titulo.append(li_titulo)
+        enderecos_cep.append(li_cep)
+        enderecos_endereco.append(li_endereco)
+    }
 }
 
 endereco()
