@@ -3,6 +3,7 @@ let username_header = document.getElementById('username-header');
 let username_card = document.getElementById('username-card');
 let modal = document.getElementById("cadastro-endereco");
 let blurEffect = document.getElementById("overlay");
+
 async function endereco(){
     
     let tokenUser = JSON.parse(localStorage.getItem("user")).access_token;
@@ -72,7 +73,7 @@ async function cadastrarEndereco(){
     window.location.href="home.html";
 }
 
-async function setEnderecos(respostaApi){
+function setEnderecos(respostaApi){
     let enderecos_titulo = document.getElementById('endereco-titulo');
     let enderecos_cep = document.getElementById('endereco-cep');
     let enderecos_endereco = document.getElementById('endereco-endereco');
